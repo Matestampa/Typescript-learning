@@ -1,0 +1,18 @@
+-Para el browser:
+   -Hacer tsc --init (para tener tsconfig)
+
+   -Para compilar hacemos: tsc (solo)
+    (no le ponemos un archivo xq sino no funca lo de los modulos)
+   
+   -Si trabajamos con modulos: (lo cual hacemos siempre)
+     -Cambiar en el tsconfig el attr de "module"
+      a "es6" o "es >2015". (ya que es lo que entiende el browser)
+   
+     -Poner la extension de .js al importar modulos
+
+     -El script que se pone en index.html hay que ponerle type="module".
+
+-Para node solo:
+  -No hay problema con los modulos (los dejamos en commonJs)
+
+  -Compilar con tsc "nombre del archivo principal"

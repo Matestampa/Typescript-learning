@@ -1,0 +1,20 @@
+Para node:
+   -Siempre hacer un npm init (por las dudas)
+
+   -Hacer tsc --init (para tener config ts por las dudas)
+
+   -Para correr un archivo asi rapido: ts-node "file_name" (ts-node ya lo tenemos instalado global)
+    (ts-node se encarga de compilar y ejecutar al mismo tiempo)
+
+   -Para hacer tipo live-server: nodemon "file_name"
+    (la ult version de nodemon contempla typescript y si tenemos tmb el "ts-node" instalado,
+    lo usa para compilar de nuevo cada vez que hay un cambio)
+
+   -Si trabajamos con modulos (lo cual hacemos siempre).
+      -No hay q cambiar nada en el tsconfig.
+       (onda el attr module lo dejamos en "commonJs" que es lo que entiende node)
+      
+      -Los exports se hacen con export, y no con module.export
+
+      -En los imports al escribir los archivos no debemos poner ninguna extension
+       (onda queda ej: import {suma} from "./calculos" )
