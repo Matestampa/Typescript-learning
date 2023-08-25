@@ -37,3 +37,14 @@ function create_randomPerson():Person{
     //crear cosas random
     return {id:"3123-de33-23d",name:"tute",apellido:"rodr",age:20};
 }
+
+
+/*
+A ver:
+
+-Props opcionales y readonly
+-Union e interseccion
+
+
+
+*/
