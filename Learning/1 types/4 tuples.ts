@@ -14,3 +14,9 @@ let persona:[string,string]=["manu","lagarza"];
 let color_rgb:[number,number,number]=[255,4,255];
 
 let appointment:[number,string,number]=[21313,"dr culo",4];
+
+//Se pueden usar tmb para hacer matrices fijas
+let matrix_2X2:[[number,number],[number,number]]=[
+    [5,6],
+    [7,8]
+]

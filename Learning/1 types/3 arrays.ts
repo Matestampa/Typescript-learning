@@ -12,10 +12,14 @@ let num_array:number[]=[4,5,6,23,2121];
 //Podemos hacer combinacion
 let mix_array:(number|string)[]=["tute","colo",3,4];
 
+//Podemos hacer matrices
+let matrix_arr:number[][]=[
+    [4,5,6],
+    [7,8,9,65]
+]
+
 //Podemos hacerlo asi nomas (y typescript decide el tipo)
-
 let def_arr=[3,4,5,6] //(en este caso va a decidir q es de tipo solo number)
-
 
 //---- Acceso y modificacion --------
 //Podemos hacerlo con numeros (no como en js)
