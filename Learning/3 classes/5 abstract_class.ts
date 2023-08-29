@@ -21,9 +21,8 @@ alguna de las subclases.
 //(el cuerpo lo deben completar si o si las subclases) (sino tira error)
 
 //----- Ejemplo -------------------
-//Tenemos una "SuareFactory" general que se encarga de manejar cuantos se crean, agregarlos
+//Tenemos una "SuareFactory" general que se encarga de manejar cuantos cuadrados se crean, agregarlos
 //al dom, etc.
-
 //Pero lo que cambia en cada implemntacion es la secuencia de colores que se usa
 abstract class SquareFactory{
       pos_x:number;
