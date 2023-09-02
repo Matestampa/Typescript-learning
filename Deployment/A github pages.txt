@@ -1,0 +1,3 @@
+https://www.adictosaltrabajo.com/2020/01/29/desplegando-nuestra-aplicacion-typescript-con-github-pages/
+
+https://zubialevich.blogspot.com/2018/09/how-to-build-typescript-github-pages-app.html
