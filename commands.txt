@@ -1,0 +1,18 @@
+--------------------------- COMPILAR EL PROYECTO ------------------------
+(El compilador necesita si o si un tsconfig.json para compilar)
+
+
+tsc --build O tsc -b  //encuentra el tsconfig.json en la root del project y compila con eso.
+tsc --build "folder" //encuentra el tsconfig.json en esa folder y compila con eso.
+
+tsc -build "folder/configFileTs.json" //busca el file en esa folder y compila con eso
+                                      //se usa por si le queremos cambiar el nombre al tsconfig
+
+
+tsc "archivo.ts" //en este caso ignora todo lo del tsconfig, y lo compila con todas las opciones
+                 //por default. (obviamente no lo manda a una folder "build" ni nada)
+                 //crea el archivo .js ahi en el mismo lugar
+
+------------------------- BORRAR LOS ARCHIVOS COMPILADOS -------------------------
+                              (osea los js generados)
+tsc --build --clean

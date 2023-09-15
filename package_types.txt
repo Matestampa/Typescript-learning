@@ -1,0 +1,18 @@
+====================== INSTALAR TYPES DE LOS PACKAGES QUE USEMOS ================00
+   
+-Lo tenemos que hacer para que typescript nos deje interactuar con el package.
+
+-Algunos ya los traen. (en un archivo d.ts)
+
+-Pero otros hay que buscarlos. Basicamente lo q hay que instalar es otro package que contiene los types.
+(los suele hacer la gente, y para los mas importamtes hay si o si)
+
+-La mayoria es asi: @types/"nombre del package".
+
+-Para instalar hacemos: npm install @types/"nombre del package" -D
+
+-Ahi lo instalamos como devDependencie.
+
+-(Va a aparecer automaticamente en node_modules dentro de una carpeta @types).
+
+-typescript por defecto va a buscar esos types en dicha carpeta "node_modules/@types".

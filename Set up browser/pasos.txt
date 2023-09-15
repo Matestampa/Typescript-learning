@@ -1,7 +1,7 @@
 -Para el browser:
    -Hacer tsc --init (para tener tsconfig)
 
-   -Para compilar hacemos: tsc (solo)
+   -Para compilar hacemos: tsc --build
     (no le ponemos un archivo xq sino no funca lo de los modulos)
    
    -Si trabajamos con modulos: (lo cual hacemos siempre)
@@ -11,8 +11,6 @@
      -Poner la extension de .js al importar modulos
 
      -El script que se pone en index.html hay que ponerle type="module".
-
--Para node solo:
-  -No hay problema con los modulos (los dejamos en commonJs)
-
-  -Compilar con tsc "nombre del archivo principal"
+   
+   -Cambiar en el tsconfig el attr "target" a "es6":
+      -Con esto nos acepta cosas mas nuevas como promises y async await.

@@ -64,7 +64,7 @@ abstract class SquareFactory{
 
 class Classic_squareFactory extends SquareFactory{
      constructor(pos_x:number,pos_y:number){
-        super(pos_x,pos_y);
+        super(pos_x,pos_y)
      }
 
      p_define_color(): string {

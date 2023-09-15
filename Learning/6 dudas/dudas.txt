@@ -1,0 +1,88 @@
+//----------------------------- DUDAS GENERALES -----------------------------
+
+//============== HACER UN TYPE PARA UN OBJ, ESPECIFICANDO EL TYPE DE LA KEY ================
+                           (Para esos objs que los usamos como map)
+
+type obj_type={
+    [key:string]=HtmlButton
+}
+
+let buttons:obj_type={}
+
+-Ahora todo lo que metamos debe ser con una key de tipo string.
+
+
+//==================== TYPE "Void" HAS NO CALL SIGNATURES ============================
+
+-Nos pasaba cuando queriamos definir una variable, (especificamente en una class) y le 
+ poniamos void directo como type.
+
+-Onda:
+  class Manuel{
+      on_press:void
+
+      constructor()
+
+      ..etc
+
+      press_button(){
+         this.on_press() //ahi nos tiraba el error.
+      }
+  }
+
+-Solucion:
+  Definir la variable asi:
+    
+    on_press:()=>void;
+
+
+//===================== DEFINIR TYPE, PARA UNA VAR QUE PUEDE CONTENER CLASES ===============
+                            Q HEREDAN DE UNA ABSTRACT CLASS EN COMUN
+
+-Osea yo tengo:
+  -abstract class SequenceGenerator
+
+  -class Normal_SequenceGenerator extends SequenceGenerator
+  -class NextTo_SequenceGenerator extends SequenceGenerator
+
+-Y ahora en un "Game mode" quiero tener una var SequenceGenerator que pueda
+ contener cualquiera de las clases, osea que sea intercambiable:
+
+ -Para hacer esto, vamos a tener q importar tambien la abstract class.
+  Se puede importar como normal y funca igual. ----> import {SequenceGenerator as SequenceGenerator_type}
+  Pero yo la importaria como type para q se diferencie. -->import type {SequenceGenerator as SequenceGenerator_type}
+
+  (lo del as lo pongo prar diferenciar de la definicion de la var)
+
+  (en caso de importar como type, tmb deberiamos exportarlo asi----> export type {SequenceGenerator} )
+
+ //------------- Definiendo la var ---------
+ 
+ SequenceGenerator: SequenceGenerator_type;
+
+ //Ahora le podemos asignar cualquiera de las clases q herede de esta.
+ SequenceGenerator=new Normal_SequenceGenerator();
+ SequenceGenerator=new NextTo_SequenceGenerator(); //no daria error.
+
+
+-Ahora hay un problem. Si lo que queremos es que una variable no contenga la clase instanciada,
+ sino solo la referencia, ahi se complica:
+
+ -Osea seria esto:
+   SequenceGenerator:NextTo_SequenceGenerator //le asignamos la ref
+
+   new SequenceGenerator(...lo q sea) //y lo llamamos cuando queremos.
+ 
+ -Solo funciona para una clase en particular, poiniendo typeof:
+   SequenceGenerator:typeof NextTo_SequenceGenerator;
+   
+   SequenceGenerator=NextTo_SequenceGenerator;
+   new SequenceGenerator(...lo q sea);
+ 
+ -Pero si lo queremos hacer con la abstract class no funca.
+  
+  (osea funca, pero si solo el constructor de la clase hija es igual)
+  (si tiene algun parametro mas, no se puede)
+  
+  SequenceGenerator:typeof SequenceGenerator_type;
+  SequenceGenerator=NextTo_SequenceGenerator //tira error.

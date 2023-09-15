@@ -9,6 +9,8 @@ Para node:
    -Para hacer tipo live-server: nodemon "file_name"
     (la ult version de nodemon contempla typescript y si tenemos tmb el "ts-node" instalado,
     lo usa para compilar de nuevo cada vez que hay un cambio)
+   
+  -Para compilarlo, lo mismo que en el bowser: tsc --build
 
    -Si trabajamos con modulos (lo cual hacemos siempre).
       -No hay q cambiar nada en el tsconfig.
@@ -18,3 +20,6 @@ Para node:
 
       -En los imports al escribir los archivos no debemos poner ninguna extension
        (onda queda ej: import {suma} from "./calculos" )
+   
+   -Cambiar en el tsconfig el attr "target" a "es6":
+      -Con esto nos acepta cosas mas nuevas como promises y async await.
