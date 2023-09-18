@@ -1,0 +1,22 @@
+//----- Dentro del compiler -------
+
+-"target" //Q versiond e js estamos usando.
+          //Poner por las dudad en "ES6"
+
+-"module" //Como se van a generar los modulos al compilar.
+          //Poner tmb por las dudas en "ES6"
+
+-"outDir" //En que carpeta se van poner los archivos compilados
+          //Poner siempre "./build" o "./dist" (son los mas comunes)
+
+
+-"typeRoots" //Si tenemos carpetas donde metemos files con types propios, ponerlas ahi.
+             //(para que los reconozca o algo asi)
+             //(igual no es necesario)
+
+
+//----- Fuera de compiler. (osea añadir otras options) -------
+
+-"include": [] //Que carpetas debe ver el compiler para compilar.
+               //Poniendo "src", compila todo lo q haya ahi dentro y sus subdirectorios.
+               //Si no la ponemos, compila todo lo de la root directo

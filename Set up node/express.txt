@@ -1,25 +1,8 @@
--Tmb dif entre dependencies y devDependencies:
-   -Es x si queremos usar nuestro project como paquete para otro.
-
-   -Onda si hacemos un npm install normal (tipo para seguir desarrollnado sobre el project)
-    va a instalar las 2 cosas.
-   
-   -Pero si alguien lo usa como dependencia para su project, solo se le van a instalar
-    las "subdependencias" que esten en "dependencies".
-
-
 -Crear types para los jsons de las responses 23:30
-
-
--Typescript mira archivos en este orden
-si tienen el mismo nombre: ".tsx" ".ts" ".node" ".js" ".json"
-
+   
+   -Deberiamos tener una interface de la response para que ts sepa que vamos a devolver.
+   
+   -Podemos usar esta pag para pasar de json a interface:https://quicktype.io/typescript
 
 
 -Indicar q puede llegar a devolver undefined 50
-
-
--No escribir de nuevo todas las props de un obj/type de nuevo, al pasarlas como params: 58
-
-
--Usar enums para validar un campo q solo puede aceptar ciertas opciones. 1:18

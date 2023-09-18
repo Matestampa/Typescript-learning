@@ -1,0 +1,82 @@
+----------------------- CONSIDERACIONES GENERALES ----------------------------------
+
+
+
+======== NO ESCRIBIR DE NUEVO TODAS LAS PROPS DE UN TYPE/INTERFACE ===================
+===============    AL PASARLAS COMO ARGS A LO Q SEA       ============================
+   
+-Basicamente pasar un obj a la funcion.(enves de cada prop separada)
+   
+-Y poner un solo param, con el type o interface del obj.
+
+-De esta manera si cambiamos algo en la interface, son memos lugares donde tenemos que
+cambiar todo.
+
+-Ejemplo:
+    
+    interface Person{
+        name:string,
+        age:number,
+        direc:string
+    }
+    
+    function add_person_withId(person:Person){
+        //Lea gregamos la prop de id, y solo ponemos ...person para acceder a todas sus props
+        let new_person={
+            id:random(),
+            ...person
+        }
+
+        arr.push(person)
+    }
+    
+    //Supongamos q las recuperamos de una post request
+    add_person_withId({
+       name,
+       age,
+       direc
+    })
+
+
+
+
+================== USAR ENUMS PARA VALIDA UN CAMPO Q SOLO PUEDE =============================
+=================         ACEPTAR CIERTAS OPCIONES. 1:18        ==========================
+
+-Ejemplo:
+
+-Tenemos un campo que solo puede contener. "red", "blue" , "black", "green".
+
+-Y tenemos un validator, que se fija que la opcion pasada este dentro de esas:
+    
+    (option:string):boolean=>{
+        return ["red", "blue" , "black", "green"].includes(option)
+    }
+   
+-Pero esto esta mal, ya que estariamos haciendo lo de "magic strings".
+
+-Podemos usar un enum: (que lo podemos usar como obj al importarlo)
+    enum Colors{
+        Red:"red",
+        Blue:"blue",
+        Black: "black",
+        Green: "green"
+    }
+    
+-Lo importamos en el archivo q necesitemos, y ahora hacemos:
+    import {Colors} from "./donde_sea"
+
+    (option:any):boolean=>{
+        return Object.values(Colors).includes(option).
+    }
+
+-Asi nos aseguramos de no tipear mal algo, y ademas tener que acordarnos bien como se escribe
+cada opcion.
+
+
+OTROS USOS:(no solo para esta validacion):
+   
+   -Para tipos de error en una api.
+
+
+=======================================================================================

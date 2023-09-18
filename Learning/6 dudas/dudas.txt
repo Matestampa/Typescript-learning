@@ -4,7 +4,7 @@
                            (Para esos objs que los usamos como map)
 
 type obj_type={
-    [key:string]=HtmlButton
+    [key:string]:HtmlButton
 }
 
 let buttons:obj_type={}
@@ -86,3 +86,12 @@ let buttons:obj_type={}
   
   SequenceGenerator:typeof SequenceGenerator_type;
   SequenceGenerator=NextTo_SequenceGenerator //tira error.
+
+
+======================= EN QUE ORDEN MIRA LOS ARCHIVOS TYPESCRIPT =======================
+                           (SI ES QUE TIENEN EL MISMO NOMBRE)
+
+-El orden es:".tsx" ".ts" ".node" ".js" ".json"
+
+
+=======================================================================================

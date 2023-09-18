@@ -15,4 +15,4 @@
 
 -(Va a aparecer automaticamente en node_modules dentro de una carpeta @types).
 
--typescript por defecto va a buscar esos types en dicha carpeta "node_modules/@types".
+-typescript por defecto va a buscar los types de packages en dicha carpeta "node_modules/@types".
